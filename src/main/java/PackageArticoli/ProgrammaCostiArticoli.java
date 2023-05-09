@@ -12,8 +12,6 @@ public class ProgrammaCostiArticoli {
         List<Articolo> articoli = new ArrayList<>();
 
 
-
-
         while (true) {
             System.out.print("Nome articolo (o 'fine' per terminare): ");
             String nomeArticolo = scanner.nextLine();
