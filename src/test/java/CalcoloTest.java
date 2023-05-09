@@ -17,7 +17,7 @@ public class CalcoloTest {
     void provaAssertion() {
         List<Articolo> articoli = new ArrayList<>();
         Calcolo calcoloTest = new Calcolo();
-        double prezzo = calcoloTest.metodoDiCalcolo("alfa", 2, 3, articoli);
-        Assertions.assertEquals(6, prezzo);
+        //calcoloTest.metodoDiCalcolo("alfa", 2, 3, articoli);
+        Assertions.assertEquals(6, calcoloTest.metodoDiCalcolo("alfa", 2, 3, articoli));
     }
 }
