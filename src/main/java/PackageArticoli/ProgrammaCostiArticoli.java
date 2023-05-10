@@ -28,7 +28,7 @@ public class ProgrammaCostiArticoli {
             scanner.nextLine(); // Consuma il carattere di fine linea dopo la lettura dell'intero
 
             double costoArticolo = nuovoCalcolo.metodoDiCalcolo(nomeArticolo, prezzoArticolo, quantitaArticolo, articoli);
-            System.out.printf("Il costo totale di %d %s è %.2f\n", quantitaArticolo, nomeArticolo, costoArticolo);
+            System.out.printf("Il costo totale di %d %s e' %.2f\n", quantitaArticolo, nomeArticolo, costoArticolo);
 
 
         }

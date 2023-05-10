@@ -2,12 +2,12 @@ package PackageArticoli;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
+
 
 public class Calcolo {
 
     public double metodoDiCalcolo(String nomeArticolo, double prezzoArticolo, int quantitaArticolo, List<Articolo> articoli) {
-        Scanner scanner = new Scanner(System.in);
+
 
         {
 
@@ -44,6 +44,13 @@ public class Calcolo {
 
                 articolo.aggiungiQuantita(quantitaArticolo);
                 double costoArticolo = articolo.getPrezzo() * quantitaArticolo;
+                if (costoArticolo >= 100) {
+                    System.out.println("Complimenti hai ricevuto uno sconto del 20%\n" +
+                            "Costo iniziale: " + costoArticolo);
+                    costoArticolo = costoArticolo/100 * 80;
+                    System.out.println("Costo finale: " + costoArticolo);
+
+                }
 
                 return costoArticolo;
 
