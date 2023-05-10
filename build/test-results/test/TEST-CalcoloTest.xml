@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CalcoloTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-09T16:59:36" hostname="MSIF" time="0.059">
+<testsuite name="CalcoloTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-05-10T18:57:26" hostname="MSIF" time="0.106">
   <properties/>
-  <testcase name="Test di prova" classname="CalcoloTest" time="0.059"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="TestConNomeArticoloNullo" classname="CalcoloTest" time="0.066"/>
+  <testcase name="PrezzoArticoloNonValido" classname="CalcoloTest" time="0.004"/>
+  <testcase name="QuantitÃ  non valida" classname="CalcoloTest" time="0.003"/>
+  <testcase name="Lista nulla" classname="CalcoloTest" time="0.004"/>
+  <testcase name="ProvaCambioPrezzo" classname="CalcoloTest" time="0.018"/>
+  <testcase name="TestConValoriValidi" classname="CalcoloTest" time="0.002"/>
+  <system-out><![CDATA[Articolo giÃ  esistente, prezzo non modificabile
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

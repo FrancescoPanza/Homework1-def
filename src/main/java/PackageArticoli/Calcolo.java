@@ -15,6 +15,15 @@ public class Calcolo {
                 if(nomeArticolo.isEmpty()){
                     throw new RuntimeException("Nome dell'articolo non inserito");
                 }
+                if(prezzoArticolo <= 0){
+                    throw new RuntimeException("Prezzo articolo non valido");
+                }
+                if(quantitaArticolo <= 0){
+                    throw new RuntimeException("Quantità articolo non valido");
+                }
+                if(articoli == null){
+                    throw new RuntimeException("Nessuna lista passata");
+                }
 
                 // Cerca se l'articolo è già stato inserito in precedenza
                 Optional<Articolo> articoloEsistente = articoli.stream()
