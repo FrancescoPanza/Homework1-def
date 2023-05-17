@@ -15,7 +15,7 @@ public class CalcoloTest {
 
     @Test
     @DisplayName("TestConValoriValidi")
-    void metodoDiCalcolo() {
+    void ValoriValidi() {
         List<Articolo> articoli = new ArrayList<>();
         Calcolo calcoloTest = new Calcolo();
         Assertions.assertEquals(6, calcoloTest.metodoDiCalcolo("alfa", 2, 3, articoli));
@@ -23,7 +23,7 @@ public class CalcoloTest {
 
     @Test
     @DisplayName("TestConNomeArticoloNullo")
-    void T2() {
+    void NomeArticoloNullo() {
         List<Articolo> articoli = new ArrayList<>();
         Calcolo calcoloTest = new Calcolo();
         assertThrows(RuntimeException.class,
@@ -33,7 +33,7 @@ public class CalcoloTest {
 
     @Test
     @DisplayName("PrezzoArticoloNonValido")
-    void T3() {
+    void PrezzoArticoloMinoreOUgualeAZero() {
         List<Articolo> articoli = new ArrayList<>();
         Calcolo calcoloTest = new Calcolo();
         assertThrows(RuntimeException.class,
@@ -42,7 +42,7 @@ public class CalcoloTest {
 
     @Test
     @DisplayName("Quantità non valida")
-    void T4() {
+    void QuantitaMinoreOUgualeAZero() {
         List<Articolo> articoli = new ArrayList<>();
         Calcolo calcoloTest = new Calcolo();
         assertThrows(RuntimeException.class,
@@ -51,7 +51,7 @@ public class CalcoloTest {
 
     @Test
     @DisplayName("Lista nulla")
-    void T5() {
+    void ListaNulla() {
         Calcolo calcoloTest = new Calcolo();
         assertThrows(RuntimeException.class,
                 () -> calcoloTest.metodoDiCalcolo("Articolo di prova", 4,9, null));
@@ -59,7 +59,7 @@ public class CalcoloTest {
 
     @Test
     @DisplayName("ProvaCambioPrezzo")
-    void T6() {
+    void ProvaCambioPrezzo() {
         List<Articolo> articoli = new ArrayList<>();
         Calcolo calcoloTest = new Calcolo();
         calcoloTest.metodoDiCalcolo("alfa", 4, 1, articoli);
@@ -68,7 +68,7 @@ public class CalcoloTest {
 
     @Test
     @DisplayName("ScontoOltreI100Spesi")
-    void T7() {
+    void PercentualeDiScontoSuSpesaMaggioreOUgualeA100() {
         List<Articolo> articoli = new ArrayList<>();
         Calcolo calcoloTest = new Calcolo();
         Assertions.assertAll(   ()-> assertEquals(99, calcoloTest.metodoDiCalcolo("alfa", 49.5, 2, articoli)),
