@@ -13,31 +13,32 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class CalcoloTest {
-
-
+    private Calcolo calcoloTest;
+    private List<Articolo> articoli;
+    @BeforeEach
+    void set(){
+        calcoloTest = new Calcolo();
+        articoli = new ArrayList<>();
+    }
 
     @Test
-    @DisplayName("TestConValoriValidi") //white
+    @DisplayName("Test con input validi e corretti") //white
     void ValoriValidi() {
-        List<Articolo> articoli = new ArrayList<>();
-        Calcolo calcoloTest = new Calcolo();
+        //List<Articolo> articoli = new ArrayList<>();
+        //Calcolo calcoloTest = new Calcolo();
         Assertions.assertEquals(6, calcoloTest.metodoDiCalcolo("alfa", 2, 3, articoli));
     }
 
     @Test   //white
-    @DisplayName("ProvaCambioPrezzo")
+    @DisplayName("prova del cambio prezzo")
     void ProvaCambioPrezzo() {
-        List<Articolo> articoli = new ArrayList<>();
-        Calcolo calcoloTest = new Calcolo();
         calcoloTest.metodoDiCalcolo("alfa", 4, 1, articoli);
         Assertions.assertEquals(12, calcoloTest.metodoDiCalcolo("alfa", 6, 3, articoli));
     }
 
     @Test   //white
-    @DisplayName("ScontoOltreI100Spesi")
+    @DisplayName("Sconto oltre i 100 spesi")
     void PercentualeDiScontoSuSpesaMaggioreOUgualeA100() {
-        List<Articolo> articoli = new ArrayList<>();
-        Calcolo calcoloTest = new Calcolo();
         Assertions.assertAll(   ()-> assertEquals(99, calcoloTest.metodoDiCalcolo("alfa", 49.5, 2, articoli)),
                 ()-> assertEquals(80, calcoloTest.metodoDiCalcolo("bravo", 50, 2, articoli)),
                 ()-> assertEquals(80.8, calcoloTest.metodoDiCalcolo("charlie", 50.5,2, articoli))
@@ -46,29 +47,23 @@ public class CalcoloTest {
     }
 
     @Test //black
-    @DisplayName("TestConNomeArticoloNullo")
-    void NomeArticoloNullo() {
-        List<Articolo> articoli = new ArrayList<>();
-        Calcolo calcoloTest = new Calcolo();
+    @DisplayName("Test con nome articolo non inserito")
+    void NomeArticoloVuoto() {
         assertThrows(RuntimeException.class,
                 () -> calcoloTest.metodoDiCalcolo("", 2,4, articoli));
     }
 
 
     @Test   //black
-    @DisplayName("PrezzoArticoloNonValido")
+    @DisplayName("Prezzo dell'articolo inserito non valido")
     void PrezzoArticoloMinoreOUgualeAZero() {
-        List<Articolo> articoli = new ArrayList<>();
-        Calcolo calcoloTest = new Calcolo();
         assertThrows(RuntimeException.class,
                 () -> calcoloTest.metodoDiCalcolo("Articolo di prova", -7,4, articoli));
     }
 
     @Test //black
-    @DisplayName("Quantità non valida")
+    @DisplayName("Quantità inserita non valida")
     void QuantitaMinoreOUgualeAZero() {
-        List<Articolo> articoli = new ArrayList<>();
-        Calcolo calcoloTest = new Calcolo();
         assertThrows(RuntimeException.class,
                 () -> calcoloTest.metodoDiCalcolo("Articolo di prova", 4,-5, articoli));
     }
@@ -76,16 +71,19 @@ public class CalcoloTest {
     @Test       //black
     @DisplayName("Lista nulla")
     void ListaNulla() {
-        Calcolo calcoloTest = new Calcolo();
         assertThrows(RuntimeException.class,
                 () -> calcoloTest.metodoDiCalcolo("Articolo di prova", 4,9, null));
+    }
+
+    @Test       //black
+    void ArticoloNullo() {
+        assertThrows(RuntimeException.class,
+                () -> calcoloTest.metodoDiCalcolo(null, 4,9, articoli));
     }
 
     @Test
     public void VerificaDati() {
         Calcolo calcolo = new Calcolo();
-        List<Articolo> articoli = new ArrayList<>();
-
         double costoArticolo = calcolo.metodoDiCalcolo("Sedia", 20, 2, articoli);
 
         Assertions.assertAll(   ()-> assertEquals(1, articoli.size()),
