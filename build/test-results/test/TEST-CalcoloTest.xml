@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CalcoloTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-06-06T15:26:10" hostname="MSIF" time="0.074">
+<testsuite name="CalcoloTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-06-12T17:10:26" hostname="MSIF" time="0.066">
   <properties/>
-  <testcase name="Lista nulla" classname="CalcoloTest" time="0.024"/>
-  <testcase name="VerificaDati()" classname="CalcoloTest" time="0.004"/>
+  <testcase name="VerificaDati()" classname="CalcoloTest" time="0.037"/>
   <testcase name="Prezzo dell'articolo inserito non valido" classname="CalcoloTest" time="0.002"/>
-  <testcase name="Test con nome articolo non inserito" classname="CalcoloTest" time="0.002"/>
-  <testcase name="Test con input validi e corretti" classname="CalcoloTest" time="0.002"/>
-  <testcase name="Sconto oltre i 100 spesi" classname="CalcoloTest" time="0.02"/>
-  <testcase name="ArticoloNullo()" classname="CalcoloTest" time="0.003"/>
-  <testcase name="QuantitÃ  inserita non valida" classname="CalcoloTest" time="0.003"/>
-  <testcase name="prova del cambio prezzo" classname="CalcoloTest" time="0.002"/>
+  <testcase name="Test con input validi" classname="CalcoloTest" time="0.001"/>
+  <testcase name="Sconto oltre i 100 spesi" classname="CalcoloTest" time="0.013"/>
+  <testcase name="input non validi" classname="CalcoloTest" time="0.006"/>
+  <testcase name="QuantitÃ  inserita non valida" classname="CalcoloTest" time="0.001"/>
+  <testcase name="prova del cambio prezzo" classname="CalcoloTest" time="0.001"/>
   <system-out><![CDATA[Complimenti hai ricevuto uno sconto del 20%
 Costo iniziale: 100.0
 Costo finale: 80.0
 Complimenti hai ricevuto uno sconto del 20%
 Costo iniziale: 101.0
 Costo finale: 80.8
+prezzo non valido
+quantitÃ  non valida
+prezzo non valido
+prezzo non valido
+prezzo non valido
+quantitÃ  non valida
+quantitÃ  non valida
 Articolo giÃ  esistente, prezzo non modificabile
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

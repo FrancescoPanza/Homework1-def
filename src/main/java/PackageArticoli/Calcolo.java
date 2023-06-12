@@ -6,10 +6,22 @@ import java.util.Optional;
 
 public class Calcolo {
 
-    public double metodoDiCalcolo(String nomeArticolo, double prezzoArticolo, int quantitaArticolo, List<Articolo> articoli) {
+    public double metodoDiCalcolo(String nomeArticoloDaTrimmare, String prezzoArticoloStr, String quantitaArticoloStr, List<Articolo> articoli) {
+        double prezzoArticolo = 0;
+        int quantitaArticolo = 0;
+        String nomeArticolo = nomeArticoloDaTrimmare.trim();
 
+       try {
+           prezzoArticolo = Double.parseDouble(prezzoArticoloStr);
+        } catch (NumberFormatException e) {
+            System.out.println("prezzo non valido");
+        }
 
-        {
+        try {
+            quantitaArticolo = Integer.parseInt(quantitaArticoloStr);
+        } catch (NumberFormatException e) {
+            System.out.println("quantità non valida");
+        }
 
 
                 if(nomeArticolo.isEmpty()){
@@ -54,7 +66,7 @@ public class Calcolo {
 
                 return costoArticolo;
 
-        }
+
 
     }
 }

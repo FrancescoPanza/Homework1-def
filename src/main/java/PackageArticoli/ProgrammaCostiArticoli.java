@@ -20,16 +20,16 @@ public class ProgrammaCostiArticoli {
             }
 
             System.out.print("Prezzo articolo: ");
-            double prezzoArticolo = scanner.nextDouble();
+            String prezzoArticolo = scanner.nextLine();
 
 
             System.out.print("Quantità articolo: ");
-            int quantitaArticolo = scanner.nextInt();
-            scanner.nextLine(); // Consuma il carattere di fine linea dopo la lettura dell'intero
+            String quantitaArticolo = scanner.nextLine();
+           // scanner.nextLine(); // Consuma il carattere di fine linea dopo la lettura dell'intero
 
             double costoArticolo = nuovoCalcolo.metodoDiCalcolo(nomeArticolo, prezzoArticolo, quantitaArticolo, articoli);
-            System.out.printf("Il costo totale di %d %s e' %.2f\n", quantitaArticolo, nomeArticolo, costoArticolo);
-
+           // System.out.printf("Il costo totale di %d %s e' %.2f\n", quantitaArticolo, nomeArticolo, costoArticolo);
+            System.out.println("il costo totale di " + quantitaArticolo + " " + nomeArticolo + " è: " + costoArticolo);
 
         }
     }
