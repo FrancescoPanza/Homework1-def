@@ -1,6 +1,8 @@
 import PackageArticoli.Articolo;
 import PackageArticoli.Calcolo;
 import org.junit.jupiter.api.*;
+
+import java.beans.BeanProperty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,5 +106,7 @@ public class CalcoloTest {
                 ()-> assertEquals(2, articoli.get(0).getQuantita())
         );
     }
+
+
 
 }
