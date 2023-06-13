@@ -2,6 +2,7 @@ package PackageArticoli;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 
 public class Calcolo {
@@ -10,11 +11,12 @@ public class Calcolo {
         double prezzoArticolo = 0;
         int quantitaArticolo = 0;
         String nomeArticolo = nomeArticoloDaTrimmare.trim();
+        Pattern pattern = Pattern.compile("^\\d+(\\.\\d{1,2})?$");
 
-       try {
+        if (pattern.matcher(prezzoArticoloStr).matches()) {
            prezzoArticolo = Double.parseDouble(prezzoArticoloStr);
-        } catch (NumberFormatException e) {
-            System.out.println("prezzo non valido");
+        } else {
+            throw new NumberFormatException("Prezzo non valido");
         }
 
         try {
@@ -26,9 +28,6 @@ public class Calcolo {
 
                 if(nomeArticolo.isEmpty()){
                     throw new RuntimeException("Nome dell'articolo non inserito");
-                }
-                if(prezzoArticolo <= 0){
-                    throw new RuntimeException("Prezzo articolo non valido");
                 }
                 if(quantitaArticolo <= 0){
                     throw new RuntimeException("Quantità articolo non valido");

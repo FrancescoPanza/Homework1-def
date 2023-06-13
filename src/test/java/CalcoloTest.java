@@ -1,5 +1,6 @@
 import PackageArticoli.Articolo;
 import PackageArticoli.Calcolo;
+import net.jqwik.api.Property;
 import org.junit.jupiter.api.*;
 
 import java.beans.BeanProperty;
@@ -22,6 +23,11 @@ public class CalcoloTest {
     @DisplayName("Test con input validi") //white
     void ValoriValidi() {
         Assertions.assertEquals(6, calcoloTest.metodoDiCalcolo("alfa", "2", "3", articoli));
+    }
+    @Test
+    @DisplayName("Test con input validi, prezzo con decimali") //white
+    void ValoriValidi2() {
+        Assertions.assertEquals(4.50, calcoloTest.metodoDiCalcolo("alfa", "2.25", "2", articoli));
     }
 
     @Test   //white
@@ -87,6 +93,9 @@ public class CalcoloTest {
                 }),
                 () -> assertThrows(RuntimeException.class, () -> {
                     calcoloTest.metodoDiCalcolo("articolo di prova", "5","8", null);
+                }),
+                () -> assertThrows(RuntimeException.class, () -> {
+                    calcoloTest.metodoDiCalcolo("articolo di prova", "2.325","8", articoli);
                 })
 
         );
@@ -106,6 +115,7 @@ public class CalcoloTest {
                 ()-> assertEquals(2, articoli.get(0).getQuantita())
         );
     }
+
 
 
 
