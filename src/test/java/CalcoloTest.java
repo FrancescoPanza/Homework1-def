@@ -24,11 +24,7 @@ public class CalcoloTest {
     void ValoriValidi() {
         Assertions.assertEquals(6, calcoloTest.metodoDiCalcolo("alfa", "2", "3", articoli));
     }
-    @Test
-    @DisplayName("Test con input validi, prezzo con decimali") //white
-    void ValoriValidi2() {
-        Assertions.assertEquals(4.50, calcoloTest.metodoDiCalcolo("alfa", "2.25", "2", articoli));
-    }
+
 
     @Test   //white
     @DisplayName("prova del cambio prezzo")
@@ -59,7 +55,12 @@ public class CalcoloTest {
         assertThrows(RuntimeException.class,
                 () -> calcoloTest.metodoDiCalcolo("Articolo di prova", "4","-5", articoli));
     }
+    @Test
+    @DisplayName("Test con input validi, prezzo con decimali") //white
+    void ValoriValidi2() {
 
+        Assertions.assertEquals(4.50, calcoloTest.metodoDiCalcolo("alfa", "2.25", "2", articoli));
+    }
     @Test
     @DisplayName("input non validi")
     void TestDelleEccezioni(){
